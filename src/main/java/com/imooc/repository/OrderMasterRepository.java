@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * @ClassName OrderMasterRepository
- * @Description TODO
+ * @Description
  * @Author GOODRR
  * @Date 2019/9/5 14:31
  * @Version 1.0

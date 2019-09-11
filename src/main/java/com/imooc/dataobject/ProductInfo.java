@@ -1,8 +1,7 @@
 package com.imooc.dataobject;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.imooc.enums.ProductStatusEnum;
-import lombok.Data;
+import lombok.*;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
@@ -15,8 +14,8 @@ import java.util.Date;
  * Created by 廖师兄
  * 2017-05-09 11:30
  */
-@Entity
 @Data
+@Entity
 @DynamicUpdate
 public class ProductInfo {
 
@@ -47,5 +46,9 @@ public class ProductInfo {
     private Date createTime;
 
     private Date updateTime;
+
+    public ProductInfo()
+    {
+    }
 
 }

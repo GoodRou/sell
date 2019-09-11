@@ -18,7 +18,7 @@ import java.util.Optional;
 
 /**
  * @ClassName ProductServiceImpl
- * @Description TODO
+ * @Description
  * @Author GOODRR
  * @Date 2019/9/4 14:50
  * @Version 1.0
@@ -56,7 +56,18 @@ public class ProductServiceImpl implements ProductService
     @Override
     public void increaseStock(List<CartDTO> cartDTOList)
     {
+        for (CartDTO cartDTO : cartDTOList)
+        {
+            Optional<ProductInfo> productInfo = respository.findById(cartDTO.getProductId());
+            if(!productInfo.isPresent())
+            {
+                throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
+            }
+            Integer result = productInfo.get().getProductStock() + cartDTO.getPriductQuantity();
+            productInfo.get().setProductStock(result);
 
+            respository.save(productInfo.get());
+        }
     }
 
     @Override

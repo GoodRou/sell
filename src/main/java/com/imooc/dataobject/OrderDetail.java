@@ -1,6 +1,6 @@
 package com.imooc.dataobject;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,13 +8,13 @@ import java.math.BigDecimal;
 
 /**
  * @ClassName OrderDetail
- * @Description TODO
+ * @Description
  * @Author GOODRR
  * @Date 2019/9/5 14:27
  * @Version 1.0
  **/
-@Entity
 @Data
+@Entity
 public class OrderDetail
 {
     @Id
@@ -31,4 +31,15 @@ public class OrderDetail
     private Integer productQuantity;
     /** 商品小图. */
     private String productIcon;
+
+    public OrderDetail()
+    {
+        super();
+    }
+    public OrderDetail(String productId,Integer productQuantity)
+    {
+        this.productId = productId;
+        this.productQuantity = productQuantity;
+    }
+
 }

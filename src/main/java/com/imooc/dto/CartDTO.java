@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * @ClassName CartDTO
- * @Description TODO
+ * @Description
  * @Author GOODRR
  * @Date 2019/9/5 16:20
  * @Version 1.0
